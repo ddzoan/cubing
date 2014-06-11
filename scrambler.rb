@@ -7,6 +7,7 @@ def getScramble()
   prevPrevAxis = 0
 
   randTurnID = (allturns.length * rand).floor
+  scramble << allturns[randTurnID] << " "
 
   prevFace = randTurnID / 3
   prevAxis = randTurnID / 6
@@ -24,6 +25,8 @@ def getScramble()
       prevAxis = randTurnID / 6
     end
   end
+  scramble << allturns[randTurnID] << " "
+
 
   23.times do
     valid = false
