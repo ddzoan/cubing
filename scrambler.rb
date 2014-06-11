@@ -9,15 +9,18 @@ def getScramble()
       randindex = (18*rand).floor
 
       if i > 0
-        if (randindex / 3) == (allturns.index(scramble[i-1]) / 3)
+        if (randindex / 3) == (prevTurn) / 3)
           valid = false
-        elsif i > 1 && (randindex / 6) == (allturns.index(scramble[i-1]) / 6) && (randindex / 3) == (allturns.index(scramble[i-2]) / 3)
+        elsif i > 1 && (randindex / 6) == (prevTurn) / 6) && (randindex / 3) == (prevPrevTurn) / 3)
           valid = false
         else
           valid = true
+          prevPrevTurn = prevTurn if i > 1
+          prevTurn = randindex
         end
       else
         valid = true
+        prevTurn = randindex
       end
     end
 
@@ -26,8 +29,7 @@ def getScramble()
     scramble << allturns[randindex]
   end
 
-  scramble
+  scramble.join
 end
 
-getScramble.each {|x| print x + ' '}
-print "\n"
+puts getScramble
