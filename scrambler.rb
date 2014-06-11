@@ -11,8 +11,8 @@ def getScramble()
 
     while !valid
       randTurnID = (allturns.length * rand).floor
-      currentFace = randTurnID / 3
-      currentAxis = randTurnID / 6
+      currentFace = randTurnID / 3 #gives 1-6 value based on cube face
+      currentAxis = randTurnID / 6 #gives 1-3 value based on cube axis
 
       if currentFace == prevFace
         valid = false
