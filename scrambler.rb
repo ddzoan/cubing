@@ -11,16 +11,18 @@ def getScramble()
 
     while !valid
       randTurnID = (allturns.length * rand).floor
+      currentFace = randTurnID / 3
+      currentAxis = randTurnID / 6
 
-      if (randTurnID / 3) == prevFace
+      if currentFace == prevFace
         valid = false
-      elsif (randTurnID / 6) == prevPrevAxis && (randTurnID / 6) == prevAxis
+      elsif currentAxis == prevPrevAxis && currentAxis == prevAxis
         valid = false
       else
         valid = true
         prevPrevAxis = prevAxis
-        prevFace = randTurnID / 3
-        prevAxis = randTurnID / 6
+        prevFace = currentFace
+        prevAxis = currentAxis
       end
     end
 
