@@ -31,7 +31,7 @@ def getScramble()
     scramble << allturns[randTurnID] << " "
   end
 
-  scramble
+  scramble.strip
 end
 
 puts getScramble
